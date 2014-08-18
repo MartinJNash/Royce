@@ -3,19 +3,22 @@ module Roller
 
     extend ActiveSupport::Concern
 
-    included do
-      # things to do when a class includes this module
-    end
-
     module ClassMethods
       # How a class opts in to roller
       # Pass an array of roles
       def roller_roles(roles)
         confirm_roles_exist roles
+
         class_eval do
-          @@available_roles = roles
           has_many :roles, as: :rolleable, class_name: 'Roller::Role'
+
+          @@available_role_names = roles
+          def self.available_role_names
+            @@available_role_names
+          end
+
           include Roller::Methods
+
         end
       end
 
