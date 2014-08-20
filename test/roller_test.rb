@@ -96,6 +96,12 @@ describe "Basic tests" do
     end
   end
 
+  it "has named scopes for each role" do
+    User.available_roles.each do |role|
+      User.send role.name.pluralize.to_sym
+    end
+  end
+
 
 end
 

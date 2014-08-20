@@ -9,19 +9,16 @@ module Roller
       def roller_roles(roles)
         confirm_roles_exist roles
 
-        class_eval do
-          has_many :role_connectors, as: :roleable, class_name: 'Roller::Connector'
-          has_many :roles, through: :role_connectors, class_name: 'Roller::Role'
-
-          @@available_role_names = roles
-          def self.available_role_names
-            @@available_role_names
-          end
-
-          include Roller::Methods
-
+          # Work in singleton class
+        class << self
+          attr_reader :available_role_names
         end
+        @available_role_names = roles
+
+        include Roller::ClassMethods
+        include Roller::Methods
       end
+
 
       private
 
@@ -33,6 +30,9 @@ module Roller
       end
     end
   end
+
+
+
 
   # Every ActiveRecord::Base now includes Roller::Macros
   ActiveRecord::Base.send :include, Roller::Macros

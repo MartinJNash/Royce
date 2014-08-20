@@ -3,11 +3,6 @@ module Roller
 
     def self.included includer
 
-      includer.class_eval do
-        def self.available_roles
-          self.available_role_names.map{ |name| Role.find_by(name: name) }
-        end
-      end
 
       includer.instance_eval do
         # Add instance methods like user? admin?
