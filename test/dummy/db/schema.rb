@@ -11,15 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817233903) do
+ActiveRecord::Schema.define(version: 20140820071323) do
+
+  create_table "roller_connector", force: true do |t|
+    t.integer "roleable_id",   null: false
+    t.string  "roleable_type", null: false
+    t.integer "role_id",       null: false
+  end
+
+  add_index "roller_connector", ["role_id"], name: "index_roller_connector_on_role_id"
+  add_index "roller_connector", ["roleable_id", "roleable_type"], name: "index_roller_connector_on_roleable_id_and_roleable_type"
 
   create_table "roller_role", force: true do |t|
-    t.string   "name"
-    t.integer  "rolleable_id"
-    t.string   "rolleable_type"
+    t.string   "type"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "roller_role", ["name"], name: "index_roller_role_on_name"
 
   create_table "users", force: true do |t|
     t.datetime "created_at"

@@ -11,7 +11,7 @@ describe "Basic tests" do
   end
 
   it 'can create role' do
-    role = Roller::Role.create
+    role = Roller::Role.create(name: 'some_role')
     role.wont_be_nil
   end
 

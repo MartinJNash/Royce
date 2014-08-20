@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    roller (0.0.1)
+    Royce (0.0.1)
       rails (~> 4.1.4)
 
 GEM
@@ -35,7 +35,6 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
-    coderay (1.1.0)
     erubis (2.7.0)
     hike (1.2.3)
     i18n (0.6.11)
@@ -43,7 +42,6 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.4.0)
     minitest-rails (2.0.3)
@@ -51,10 +49,6 @@ GEM
       railties (~> 4.1)
     multi_json (1.10.1)
     polyglot (0.3.5)
-    pry (0.10.0)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -74,7 +68,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
-    slop (3.5.0)
     sprockets (2.12.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -98,7 +91,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  Royce!
   minitest-rails
-  pry
-  roller!
   sqlite3

@@ -10,7 +10,8 @@ module Roller
         confirm_roles_exist roles
 
         class_eval do
-          has_many :roles, as: :rolleable, class_name: 'Roller::Role'
+          has_many :role_connectors, as: :roleable, class_name: 'Roller::Connector'
+          has_many :roles, through: :role_connectors, class_name: 'Roller::Role'
 
           @@available_role_names = roles
           def self.available_role_names
