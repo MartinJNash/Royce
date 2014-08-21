@@ -79,6 +79,12 @@ describe "Basic tests" do
     user.allowed_role?('user').must_equal true
     user.allowed_role?(:zxcv).must_equal false
     user.allowed_role?(:user).must_equal true
+
+    user_role = Royce::Role.find_or_create_by(name: 'user')
+    user.allowed_role?(user_role).must_equal true
+
+    bad_role = Royce::Role.find_or_create_by(name: 'zxcv')
+    user.allowed_role?(bad_role).must_equal false
   end
 
   it 'Has name methods' do
