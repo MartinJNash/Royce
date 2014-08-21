@@ -11,7 +11,7 @@ describe "Basic tests" do
   end
 
   it 'can create role' do
-    role = Roller::Role.create(name: 'some_role')
+    role = Royce::Role.create(name: 'some_role')
     role.wont_be_nil
   end
 
@@ -20,7 +20,7 @@ describe "Basic tests" do
   end
 
   it 'Creates roles automatically' do
-    Roller::Role.count.must_be :>, 0
+    Royce::Role.count.must_be :>, 0
   end
 
   describe 'adding roles' do
@@ -64,7 +64,7 @@ describe "Basic tests" do
   it 'Can query role name' do
     user.has_role?('user').must_equal false
     user.has_role?(:user).must_equal false
-    user_role = Roller::Role.find_by(name: 'user')
+    user_role = Royce::Role.find_by(name: 'user')
     user.has_role?(user_role).must_equal false
 
     user.add_role 'user'

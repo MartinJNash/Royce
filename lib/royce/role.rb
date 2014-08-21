@@ -1,10 +1,10 @@
-module Roller
+module Royce
 
   # The actual data model
   class Role < ::ActiveRecord::Base
-    self.table_name = 'roller_role'
+    self.table_name = 'royce_role'
 
-    has_many :connectors, class_name: 'Roller::Connector'
+    has_many :connectors, class_name: 'Royce::Connector'
 
     def to_s
       name

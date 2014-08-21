@@ -1,17 +1,16 @@
 require 'rails/generators'
 require 'rails/generators/active_record'
 
-module Roller
+module Royce
   class InstallGenerator < ::Rails::Generators::Base
 
     include ::Rails::Generators::Migration
 
     source_root File.expand_path('../templates', __FILE__)
 
-    desc 'Generates a migration'
-
+    desc 'Generates DB migration files for Royce'
     def create_migration_file
-      migration_template 'create_roller.rb', 'db/migrate/create_roller.rb'
+      migration_template 'create_royce.rb', 'db/migrate/create_royce.rb'
     end
 
     def self.next_migration_number(dirname)

@@ -1,3 +1,3 @@
-module Roller
+module Royce
   VERSION = "0.0.1"
 end

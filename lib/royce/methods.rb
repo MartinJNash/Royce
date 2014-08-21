@@ -1,4 +1,4 @@
-module Roller
+module Royce
   module Methods
 
     def self.included includer

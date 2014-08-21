@@ -1,4 +1,4 @@
-module Roller
+module Royce
   module Macros
 
     extend ActiveSupport::Concern
@@ -15,8 +15,8 @@ module Roller
         end
         @available_role_names = roles
 
-        include Roller::ClassMethods
-        include Roller::Methods
+        include Royce::ClassMethods
+        include Royce::Methods
       end
 
 
@@ -34,7 +34,7 @@ module Roller
 
 
 
-  # Every ActiveRecord::Base now includes Roller::Macros
-  ActiveRecord::Base.send :include, Roller::Macros
+  # Every ActiveRecord::Base now includes Royce::Macros
+  ActiveRecord::Base.send :include, Royce::Macros
 
 end

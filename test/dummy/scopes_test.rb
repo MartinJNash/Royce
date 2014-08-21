@@ -50,7 +50,7 @@ describe "Testing class-level scopes" do
 
   describe "Role to owning class relationships" do
 
-    the_role = Roller::Role.find_by(name: 'partier')
+    the_role = Royce::Role.find_by(name: 'partier')
     count  = 20
 
     it "exist for single word models" do
