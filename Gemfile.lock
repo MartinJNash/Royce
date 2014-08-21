@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Royce (1.0.0)
+    royce (1.0.0)
       rails (~> 4.1.4)
 
 GEM
@@ -91,6 +91,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  Royce!
   minitest-rails
+  royce!
   sqlite3
