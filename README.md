@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/royce.svg)](http://badge.fury.io/rb/royce)
+
 Royce
 ======
 
