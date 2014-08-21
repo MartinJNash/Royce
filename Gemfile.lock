@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    Royce (0.0.1)
+    Royce (1.0.0)
       rails (~> 4.1.4)
 
 GEM

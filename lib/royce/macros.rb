@@ -6,10 +6,11 @@ module Royce
     module ClassMethods
       # How a class opts in to roller
       # Pass an array of roles
-      def roller_roles(roles)
+      def royce_roles(roles)
         confirm_roles_exist roles
 
-          # Work in singleton class
+        # Work in singleton class
+        # Add a read-only class variable to all who call.
         class << self
           attr_reader :available_role_names
         end
@@ -30,8 +31,6 @@ module Royce
       end
     end
   end
-
-
 
 
   # Every ActiveRecord::Base now includes Royce::Macros
