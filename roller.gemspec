@@ -5,7 +5,7 @@ require "royce/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "Royce"
+  s.name        = "royce"
   s.version     = Royce::VERSION
   s.authors     = ["Martin Nash"]
   s.email       = ["martin.j.nash@gmail.com"]
