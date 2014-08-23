@@ -17,14 +17,16 @@ module Royce
 
     def add_role name
       if allowed_role? name
-        role = Role.find_by(name: name.to_s)
+        role = Role.find_or_create_by(name: name.to_s)
         roles << role
       end
     end
 
     def remove_role name
-      role = Role.find_by(name: name.to_s)
-      roles.delete role
+      if allowed_role? name
+        role = Role.find_by(name: name.to_s)
+        roles.delete role
+      end
     end
 
     def has_role? name

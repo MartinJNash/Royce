@@ -9,7 +9,7 @@ module Royce
         has_many :roles, through: :role_connectors, class_name: 'Royce::Role'
 
         def self.available_roles
-          self.available_role_names.map{ |name| Role.find_by(name: name) }
+          self.available_role_names.map{ |name| Role.find_or_create_by(name: name) }
         end
 
 
