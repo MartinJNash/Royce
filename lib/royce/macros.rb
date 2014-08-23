@@ -25,8 +25,10 @@ module Royce
 
       # Create Role objects as necessary
       def confirm_roles_exist(role_names)
+        puts "Make sure Royce roles exist"
         return unless ActiveRecord::Base.connection.table_exists? 'royce_role'
         role_names.each do |name|
+          ptus "Create Royce role #{name}"
           Role.find_or_create_by(name: name)
         end
       end
