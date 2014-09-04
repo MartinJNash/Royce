@@ -14,7 +14,7 @@ module Royce
         class << self
           attr_reader :available_role_names
         end
-        @available_role_names = roleis
+        @available_role_names = roles
 
         include Royce::ClassMethods
         include Royce::Methods
