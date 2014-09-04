@@ -7,15 +7,15 @@ load "dummy/db/schema.rb"
 ActiveRecord::Migrator.up "db/migrate"
 
 def human_roles
-   %w( partier rocker )
+  return :partier, :rocker
 end
 
 class Employee < ActiveRecord::Base
-  royce_roles human_roles
+  royce_roles *human_roles
 end
 
 class BabyBoomer < ActiveRecord::Base
-  royce_roles human_roles
+  royce_roles *human_roles
 end
 
 describe "Testing class-level scopes" do
@@ -27,7 +27,7 @@ describe "Testing class-level scopes" do
   end
 
   it "Has named scopes" do
-    Employee.available_role_names.must_equal human_roles
+    Employee.available_role_names.must_equal human_roles.map(&:to_s)
   end
 
   it "Owner named scopes return owners with role" do

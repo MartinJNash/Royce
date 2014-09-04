@@ -17,7 +17,7 @@ Run this in your terminal.
 
 Add this to a model.
 
-    royce_roles %w[ owner editor administrator ]
+    royce_roles :owner :editor :administrator
 
 
 ## In Depth
@@ -26,7 +26,7 @@ Adding royce to a model is super simple. The following code will add the roles u
 
 ```ruby
 class User < ActiveRecord::Base
-  royce_roles %w[ user admin editor ]
+  royce_roles :user :admin :editor
 end
 ```
 
