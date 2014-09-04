@@ -32,7 +32,7 @@ module Royce
         # Wait until the actual tables exist
         return unless ActiveRecord::Base.connection.table_exists? 'royce_role'
         role_names.each do |name|
-          Role.find_or_create_by(name: name.to_s)
+          Role.find_or_create_by(name: name)
         end
       end
 
