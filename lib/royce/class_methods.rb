@@ -9,7 +9,7 @@ module Royce
 
         # Add class method to return all possible roles
         def self.available_roles
-          self.available_role_names.map{ |name| Role.find_or_create_by(name: name) }
+          @available_roles ||= self.available_role_names.map { |name| Role.find_or_create_by(name: name) }
         end
 
         # Add scopes to including class
