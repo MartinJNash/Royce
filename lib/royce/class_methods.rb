@@ -16,8 +16,8 @@ module Royce
         # User.admins
         # User.editors
         available_role_names.each do |role_name|
-          includer_class_name = includer.model_name.to_s.underscore.pluralize
-          scope role_name.pluralize, -> { Role.find_by(name: role_name).send includer_class_name.to_sym }
+          includer_class_name = includer.model_name.to_s.underscore.pluralize.to_sym
+          scope role_name.pluralize, -> { Role.find_by(name: role_name).send includer_class_name }
         end
 
       end
