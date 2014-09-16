@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     royce (1.0.3)
-      rails (~> 4.1.4)
+      rails (>= 4.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -86,12 +86,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.3.2)
     slop (3.6.0)
-    sprockets (2.12.1)
+    sprockets (2.12.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-rails (2.1.3)
+    sprockets-rails (2.1.4)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
