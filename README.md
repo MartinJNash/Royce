@@ -10,10 +10,14 @@ Roles in Rails.
 Add this to your Gemfile.
 
     gem 'royce'
+    
+Be sure to run `bundle install`.
 
 Run this in your terminal.
 
     rails g royce:install
+
+And run `rake db:migrate`.
 
 Add this to a model.
 
