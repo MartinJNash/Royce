@@ -9,15 +9,15 @@ module Royce
 
         # Add class method to return all possible roles
         def self.available_roles
-          self.available_role_names.map{ |name| Role.find_or_create_by(name: name) }
+          @available_roles ||= self.available_role_names.map { |name| Role.find_or_create_by(name: name) }
         end
 
         # Add scopes to including class
         # User.admins
         # User.editors
         available_role_names.each do |role_name|
-          includer_class_name = includer.model_name.to_s.underscore.pluralize
-          scope role_name.pluralize, -> { Role.find_by(name: role_name).send includer_class_name.to_sym }
+          includer_class_name = includer.model_name.to_s.underscore.pluralize.to_sym
+          scope role_name.pluralize, -> { Role.find_by(name: role_name).send includer_class_name }
         end
 
       end
