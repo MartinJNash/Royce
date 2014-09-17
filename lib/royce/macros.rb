@@ -7,14 +7,16 @@ module Royce
       # How a class opts in to roller
       # Pass an array of roles
       def royce_roles(roles)
-        confirm_roles_exist roles
+        role_strings = roles.map(&:to_s)
+
+        confirm_roles_exist role_strings
 
         # Work in singleton class
         # Add a read-only class variable to all classes that call `royce_roles`
         class << self
           attr_reader :available_role_names
         end
-        @available_role_names = roles
+        @available_role_names = role_strings
 
         include Royce::ClassMethods
         include Royce::Methods
