@@ -10,7 +10,7 @@ Roles in Rails.
 Add this to your Gemfile.
 
     gem 'royce'
-    
+
 Be sure to run `bundle install`.
 
 Run this in your terminal.
@@ -26,11 +26,19 @@ Add this to a model.
 
 ## In Depth
 
-Adding royce to a model is super simple. The following code will add the roles user, admin, and editor to your model class.
+Adding royce to a model is super simple. The following code will add the roles user, admin, and editor to your model class. You can pass in an array of strings or symbols. You can even pass in a mixed array of strings and symbols.
 
 ```ruby
 class User < ActiveRecord::Base
-  royce_roles %w[ user admin editor ]
+  royce_roles %w[ user admin editor ] # array of strings
+end
+
+class Sailor < ActiveRecord::Base
+  royce_roles [ :captain, :bosun, :quartermaster ] # array of symbols
+end
+
+class RockAndRoller < ActiveRecord::Base
+  royce_roles [ :drummer, 'bassist', :editor ] # array of strings and symbols
 end
 ```
 
@@ -62,6 +70,22 @@ You also get some conveneint methods to query if a user has a certain named role
 user.admin?
 user.editor?
 user.user?
+```
+
+You can easily add a role to your model object using our bang! methods.
+
+```ruby
+user.user!
+user.admin!
+user.editor!
+```
+
+Get a list of roles that a user has
+
+```ruby
+user.add_role :user
+user.add_role :admin
+user.role_list # => ['user', 'admin']
 ```
 
 Not enough. You also get named scopes on your models.
