@@ -39,7 +39,7 @@ module Royce
 
     def has_role? name
       # grab each role name and check for inclusion
-      roles.pluck(:name).include?(name.to_s)
+      roles.exists?(name: name.to_s)
     end
 
     def allowed_role? name
