@@ -108,6 +108,16 @@ describe "Basic tests" do
     end
   end
 
+  it "has a list of roles" do
+    user.role_list.must_equal []
+
+    user.add_role :user
+    user.role_list.must_equal ['user']
+
+    user.add_role :admin
+    user.role_list.must_equal ['user', 'admin']
+  end
+
 
 end
 

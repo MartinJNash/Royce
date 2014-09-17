@@ -46,5 +46,9 @@ module Royce
       self.class.available_role_names.include? name.to_s
     end
 
+    def role_list
+      roles.pluck(:name)
+    end
+
   end
 end
