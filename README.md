@@ -80,12 +80,18 @@ user.admin!
 user.editor!
 ```
 
-Get a list of roles that a user has
+Get a list of roles that a particular user has
 
 ```ruby
 user.add_role :user
 user.add_role :admin
 user.role_list # => ['user', 'admin']
+```
+
+Get a list of all roles available to a class
+
+```ruby
+User.available_role_names # => ['user', 'admin', 'editor']
 ```
 
 Not enough. You also get named scopes on your models.
