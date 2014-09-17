@@ -39,7 +39,7 @@ module Royce
 
     def has_role? name
       # grab each role name and check for inclusion
-      roles.where( name: name.to_s ).present?
+      roles.where( name: name.to_s ).exists?
     end
 
     def allowed_role? name
