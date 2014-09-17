@@ -15,6 +15,10 @@ module Royce
           define_method("#{name}?") do
             has_role? name
           end
+
+          define_method("#{name}!") do
+            add_role name
+          end
         end
 
       end

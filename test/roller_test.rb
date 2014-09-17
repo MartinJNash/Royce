@@ -96,6 +96,16 @@ describe "Basic tests" do
     end
   end
 
+  it 'Has bang methods to assign a role' do
+    user.has_role?(:admin).must_equal false
+    user.admin!
+    user.has_role?(:admin).must_equal true
+
+    user.has_role?(:editor).must_equal false
+    user.editor!
+    user.has_role?(:editor).must_equal true
+  end
+
   it "knows allowed roles" do
     User.available_roles.each do |role|
       user.allowed_role?(role).must_equal true
