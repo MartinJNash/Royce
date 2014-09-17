@@ -1,6 +1,7 @@
 require 'test_helper'
 
 ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
+ActiveRecord::Migration.verbose = false
 ActiveRecord::Migration.create_table :employees
 ActiveRecord::Migration.create_table :baby_boomers
 load "dummy/db/schema.rb"
