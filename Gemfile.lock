@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    royce (1.0.5)
+    royce (1.0.6)
       rails (>= 4.1.4)
 
 GEM
