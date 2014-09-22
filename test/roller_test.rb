@@ -128,6 +128,16 @@ describe "Basic tests" do
     user.role_list.must_equal ['user', 'admin']
   end
 
+  it "doesn't get double roles" do
+    user.roles.count.must_equal 0
+
+    user.admin!
+    user.roles.count.must_equal 1
+
+    user.admin!
+    user.roles.count.must_equal 1
+  end
+
 
 end
 
