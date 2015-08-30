@@ -1,6 +1,9 @@
 module Royce
   module ClassMethods
     def self.included includer
+      includer_name = includer.model_name.to_s
+      includer_pluralized_name = includer_name.underscore.pluralize.to_sym
+
       includer.class_eval do
 
         # Add relations to including class
@@ -9,15 +12,14 @@ module Royce
 
         # Add class method to return all possible roles
         def self.available_roles
-          self.available_role_names.map{ |name| Role.find_or_create_by(name: name) }
+          Role.where(name: available_role_names)
         end
 
         # Add scopes to including class
         # User.admins
         # User.editors
         available_role_names.each do |role_name|
-          includer_class_name = includer.model_name.to_s.underscore.pluralize
-          scope role_name.pluralize, -> { Role.find_by(name: role_name).send includer_class_name.to_sym }
+          scope role_name.pluralize, -> { Role.find_by(name: role_name).send includer_pluralized_name }
         end
 
       end
@@ -25,7 +27,7 @@ module Royce
       # Be able to search some_role.users and get back instnaces of User
       # Royce::Role.find_by(name, 'admin').users
       Royce::Role.class_eval do
-        has_many includer.model_name.to_s.underscore.pluralize.to_sym, through: :connectors, source: :roleable, source_type: includer.model_name.to_s
+        has_many includer_pluralized_name, through: :connectors, source: :roleable, source_type: includer_name
       end
 
     end
