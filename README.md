@@ -15,20 +15,25 @@ Roles in Rails.
 
 Add this to your Gemfile.
 
-    gem 'royce'
+```ruby
+gem 'royce'
+```
 
 Be sure to run `bundle install`.
 
 Run this in your terminal.
 
-    rails g royce:install
+```sh
+rails g royce:install
+```
 
 And run `rake db:migrate`.
 
 Add this to a model.
 
-    royce_roles %w[ owner editor administrator ]
-
+```ruby
+royce_roles %w[ owner editor administrator ]
+```
 
 ## In Depth
 
@@ -116,4 +121,3 @@ For `User`s it'll look like this:
 admin_role = Royce::Role.find_by(name: 'admin')
 admin_role.users.all # Array of user objects
 ```
-
