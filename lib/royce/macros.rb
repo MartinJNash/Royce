@@ -28,9 +28,17 @@ module Royce
       # Pre-create Role objects when file is loaded
       def confirm_roles_exist(role_names)
         # Wait until the actual tables exist
-        return unless ActiveRecord::Base.connection.data_source_exists? 'royce_role'
+        return unless ActiveRecord::Base.connection.send(check_method, 'royce_role')
         role_names.each do |name|
           Role.find_or_create_by(name: name)
+        end
+      end
+
+      def check_method
+        if Rails::VERSION::MAJOR == 4
+          :table_exists?
+        else
+          :data_source_exists?
         end
       end
 
