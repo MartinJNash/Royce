@@ -1,4 +1,8 @@
+[![GitHub license](https://img.shields.io/github/license/n-rodriguez/Royce.svg)](https://github.com/n-rodriguez/Royce/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/n-rodriguez/Royce.svg)](https://github.com/n-rodriguez/Royce/releases/latest)
 [![Gem Version](https://badge.fury.io/rb/royce.svg)](http://badge.fury.io/rb/royce)
+[![Build Status](https://travis-ci.org/n-rodriguez/Royce.svg?branch=master)](https://travis-ci.org/n-rodriguez/Royce)
+
 
 Royce
 ======
