@@ -13,8 +13,19 @@ Rails.application.configure do
   config.eager_load = false
 
   # Configure static asset server for tests with Cache-Control for performance.
-  config.serve_static_assets  = true
-  config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=3600' }
+  if Rails.version == '4.1.15'
+    config.serve_static_assets = true
+  elsif Rails.version == '4.2.8'
+    config.serve_static_files = true
+  else
+    config.public_file_server.enabled = true
+  end
+
+  if Rails::VERSION::MAJOR == 4
+    config.static_cache_control = 'public, max-age=3600'
+  else
+    config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=3600' }
+  end
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -36,4 +47,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.active_support.test_order = :random
 end
