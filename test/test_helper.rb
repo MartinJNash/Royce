@@ -1,3 +1,12 @@
+require 'simplecov'
+
+# Start Simplecov
+SimpleCov.start do
+  add_filter do |source_file|
+    File.dirname(source_file.filename).match(/lib\/*/).nil?
+  end
+end
+
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
