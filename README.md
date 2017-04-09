@@ -1,10 +1,10 @@
-[![GitHub license](https://img.shields.io/github/license/n-rodriguez/Royce.svg)](https://github.com/n-rodriguez/Royce/blob/master/LICENSE)
-[![GitHub release](https://img.shields.io/github/release/n-rodriguez/Royce.svg)](https://github.com/n-rodriguez/Royce/releases/latest)
+[![GitHub license](https://img.shields.io/github/license/jbox-web/Royce.svg)](https://github.com/jbox-web/Royce/blob/master/LICENSE)
+[![GitHub release](https://img.shields.io/github/release/jbox-web/Royce.svg)](https://github.com/jbox-web/Royce/releases/latest)
 [![Gem Version](https://badge.fury.io/rb/royce.svg)](http://badge.fury.io/rb/royce)
-[![Build Status](https://travis-ci.org/n-rodriguez/Royce.svg?branch=master)](https://travis-ci.org/n-rodriguez/Royce)
-[![Code Climate](https://codeclimate.com/github/n-rodriguez/Royce/badges/gpa.svg)](https://codeclimate.com/github/n-rodriguez/Royce)
-[![Test Coverage](https://codeclimate.com/github/n-rodriguez/Royce/badges/coverage.svg)](https://codeclimate.com/github/n-rodriguez/Royce/coverage)
-[![Dependency Status](https://gemnasium.com/n-rodriguez/Royce.svg)](https://gemnasium.com/n-rodriguez/Royce)
+[![Build Status](https://travis-ci.org/jbox-web/Royce.svg?branch=master)](https://travis-ci.org/jbox-web/Royce)
+[![Code Climate](https://codeclimate.com/github/jbox-web/Royce/badges/gpa.svg)](https://codeclimate.com/github/jbox-web/Royce)
+[![Test Coverage](https://codeclimate.com/github/jbox-web/Royce/badges/coverage.svg)](https://codeclimate.com/github/jbox-web/Royce/coverage)
+[![Dependency Status](https://gemnasium.com/jbox-web/Royce.svg)](https://gemnasium.com/jbox-web/Royce)
 
 Royce
 ======
