@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = 'Roles.'
   s.license     = 'MIT'
 
-  s.add_dependency 'rails', '>= 4.1.4'
+  s.add_dependency 'rails', '>= 4.2'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'minitest-rails'
