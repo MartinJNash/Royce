@@ -30,7 +30,7 @@ module Royce
     def add_role name
       if allowed_role? name
         return if has_role? name
-        role = Role.find_or_create_by(name: name.to_s)
+        role = Role.find_by(name: name.to_s)
         roles << role
       end
     end
@@ -43,7 +43,7 @@ module Royce
     end
 
     def has_role? name
-      role_list.include? name.to_s
+      roles.where(name: name.to_s).exists?
     end
 
     def allowed_role? name
