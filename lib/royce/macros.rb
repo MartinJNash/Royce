@@ -27,6 +27,8 @@ module Royce
 
       # Pre-create Role objects when file is loaded
       def confirm_roles_exist(role_names)
+        # return if not connected to DB (assets precompile)
+        return unless ActiveRecord::Base.connected?
         # Wait until the actual tables exist
         return unless ActiveRecord::Base.connection.send(check_method, 'royce_role')
         role_names.each do |name|
