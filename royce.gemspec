@@ -10,14 +10,14 @@ Gem::Specification.new do |s|
   s.authors     = ["Martin Nash"]
   s.email       = ["martin.j.nash@gmail.com"]
   s.homepage    = "https://github.com/MartinJNash/Royce"
-  s.summary     = "A Rails roles sollution."
+  s.summary     = "A Rails roles solution."
   s.description = "Roles."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", ">= 4.1.4"
+  s.add_dependency "rails", ">= 4.2.0"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "minitest-rails"
