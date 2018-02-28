@@ -2,10 +2,10 @@
 
 source "https://rubygems.org"
 
-gem "rails", "5.0.3"
+gem "rails", "5.0.6"
 
 group :test do
   gem "codeclimate-test-reporter", "~> 1.0.0"
 end
 
-gemspec :path => "../"
+gemspec path: "../"
