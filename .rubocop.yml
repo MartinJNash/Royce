@@ -1,0 +1,20 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - lib/generators/**/*.rb
+    - test/**/*
+
+Documentation:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 110
+
+Metrics/MethodLength:
+  Max: 15
+
+Naming/PredicateName:
+  Enabled: false

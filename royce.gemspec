@@ -1,5 +1,6 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+$LOAD_PATH.push File.expand_path('../lib', __FILE__)
 require 'royce/version'
 
 Gem::Specification.new do |s|
@@ -15,16 +16,16 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '>= 4.2'
 
-  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'appraisal'
   s.add_development_dependency 'minitest-rails'
   s.add_development_dependency 'pry'
-  s.add_development_dependency 'pry-doc'
   s.add_development_dependency 'pry-byebug'
+  s.add_development_dependency 'pry-doc'
   s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'appraisal'
+  s.add_development_dependency 'sqlite3'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
   s.require_paths = ['lib']
 end

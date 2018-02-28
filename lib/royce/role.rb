@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Royce
 
   # The actual data model
@@ -9,7 +11,6 @@ module Royce
     def to_s
       name
     end
-
   end
 
 end
