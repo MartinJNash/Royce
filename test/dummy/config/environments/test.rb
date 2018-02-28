@@ -13,9 +13,7 @@ Rails.application.configure do
   config.eager_load = false
 
   # Configure static asset server for tests with Cache-Control for performance.
-  if Rails.version == '4.1.15'
-    config.serve_static_assets = true
-  elsif Rails.version == '4.2.8'
+  if Rails.version == '4.2.10'
     config.serve_static_files = true
   else
     config.public_file_server.enabled = true
