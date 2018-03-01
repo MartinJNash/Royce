@@ -29,10 +29,10 @@ module Royce
       # Pre-create Role objects when file is loaded
       def confirm_roles_exist(role_names)
         # return if not connected to DB (assets precompile)
-        return unless ActiveRecord::Base.connected?
+        return unless ::ActiveRecord::Base.connected?
 
         # Wait until the actual tables exist
-        return unless ActiveRecord::Base.connection.send(check_method, 'royce_role')
+        return unless ::ActiveRecord::Base.connection.send(check_method, 'royce_role')
 
         role_names.each do |name|
           Role.find_or_create_by(name: name)
@@ -50,7 +50,7 @@ module Royce
     end
   end
 
-  # Every ActiveRecord::Base now includes Royce::Macros
+  # Every ::ActiveRecord::Base now includes Royce::Macros
   # This gives them access to the royce_roles method
-  ActiveRecord::Base.send :include, Royce::Macros
+  ::ActiveRecord::Base.send(:include, Royce::Macros)
 end
