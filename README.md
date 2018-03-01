@@ -32,24 +32,25 @@ And run `rake db:migrate`.
 Add this to a model.
 
 ```ruby
-royce_roles %w[ owner editor administrator ]
+royce_roles %w[owner editor administrator]
 ```
 
 ## In Depth
 
-Adding royce to a model is super simple. The following code will add the roles user, admin, and editor to your model class. You can pass in an array of strings or symbols. You can even pass in a mixed array of strings and symbols.
+Adding royce to a model is super simple. The following code will add the roles `user`, `admin`, and `editor` to your model class.
+You can pass in an array of strings or symbols. You can even pass in a mixed array of strings and symbols.
 
 ```ruby
 class User < ActiveRecord::Base
-  royce_roles %w[ user admin editor ] # array of strings
+  royce_roles %w[user admin editor] # array of strings
 end
 
 class Sailor < ActiveRecord::Base
-  royce_roles [ :captain, :bosun, :quartermaster ] # array of symbols
+  royce_roles %i[captain bosun quartermaster] # array of symbols
 end
 
 class RockAndRoller < ActiveRecord::Base
-  royce_roles [ :drummer, 'bassist', :editor ] # array of strings and symbols
+  royce_roles [:drummer, 'bassist', :editor] # array of strings and symbols
 end
 ```
 
