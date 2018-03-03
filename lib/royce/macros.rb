@@ -40,7 +40,7 @@ module Royce
       end
 
       def check_method
-        if Rails::VERSION::MAJOR == 4
+        if ::ActiveRecord::VERSION::MAJOR == 4
           :table_exists?
         else
           :data_source_exists?
@@ -49,8 +49,4 @@ module Royce
 
     end
   end
-
-  # Every ::ActiveRecord::Base now includes Royce::Macros
-  # This gives them access to the royce_roles method
-  ::ActiveRecord::Base.send(:include, Royce::Macros)
 end

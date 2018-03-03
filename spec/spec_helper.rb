@@ -1,7 +1,5 @@
 require 'simplecov'
 require 'rspec'
-require 'rails'
-require 'active_record'
 
 # Start Simplecov
 SimpleCov.start
