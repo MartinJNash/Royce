@@ -4,7 +4,6 @@
 [![Build Status](https://travis-ci.org/jbox-web/Royce.svg?branch=master)](https://travis-ci.org/jbox-web/Royce)
 [![Code Climate](https://codeclimate.com/github/jbox-web/Royce/badges/gpa.svg)](https://codeclimate.com/github/jbox-web/Royce)
 [![Test Coverage](https://codeclimate.com/github/jbox-web/Royce/badges/coverage.svg)](https://codeclimate.com/github/jbox-web/Royce/coverage)
-[![Dependency Status](https://gemnasium.com/jbox-web/Royce.svg)](https://gemnasium.com/jbox-web/Royce)
 
 Royce
 ======
