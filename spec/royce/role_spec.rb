@@ -16,6 +16,7 @@ describe 'Basic tests' do
   end
 
   it 'Creates roles automatically' do
+    user
     expect(Royce::Role.count).to be > 0
   end
 

@@ -11,8 +11,6 @@ module Royce
       def royce_roles(roles)
         role_strings = roles.map(&:to_s)
 
-        confirm_roles_exist(role_strings)
-
         # Work in singleton class
         # Add a read-only class variable to all classes that call `royce_roles`
         class << self
@@ -22,29 +20,7 @@ module Royce
 
         include Royce::ClassMethods
         include Royce::Methods
-      end
-
-      private
-
-      # Pre-create Role objects when file is loaded
-      def confirm_roles_exist(role_names)
-        # return if not connected to DB (assets precompile)
-        return unless ::ActiveRecord::Base.connected?
-
-        # Wait until the actual tables exist
-        return unless ::ActiveRecord::Base.connection.send(check_method, 'royce_role')
-
-        role_names.each do |name|
-          Role.find_or_create_by(name: name)
-        end
-      end
-
-      def check_method
-        if ::ActiveRecord::VERSION::MAJOR == 4
-          :table_exists?
-        else
-          :data_source_exists?
-        end
+        include Royce::Schema
       end
 
     end

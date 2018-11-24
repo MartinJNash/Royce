@@ -30,7 +30,7 @@ describe 'Testing class-level scopes' do
   end
 
   describe 'Role to owning class relationships' do
-    the_role = Royce::Role.find_by(name: 'partier')
+    the_role = Royce::Role.find_or_create_by(name: 'partier')
     count  = 20
 
     it 'exist for single word models' do

@@ -8,6 +8,7 @@ module Royce
   autoload :ClassMethods, 'royce/class_methods'
   autoload :Role,         'royce/role'
   autoload :Connector,    'royce/connector'
+  autoload :Schema,       'royce/schema'
 
   # Every ::ActiveRecord::Base now includes Royce::Macros
   # This gives them access to the royce_roles method
