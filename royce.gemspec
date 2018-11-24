@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.description = 'Roles.'
   s.license     = 'MIT'
 
-  s.add_dependency 'rails', '>= 4.2'
+  s.add_dependency 'rails', '>= 5.0'
 
   s.add_development_dependency 'appraisal'
   s.add_development_dependency 'pry'
