@@ -10,7 +10,7 @@ module Royce
       def load_schema!
         super
 
-        available_role_names.each do |name|
+        (available_role_names || []).each do |name|
           Role.find_or_create_by(name: name)
         end
       end
