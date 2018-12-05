@@ -8,7 +8,7 @@ rvm:
 gemfile:
   - gemfiles/rails_5.0.7.gemfile
   - gemfiles/rails_5.1.6.gemfile
-  - gemfiles/rails_5.2.1.gemfile
+  - gemfiles/rails_5.2.2.gemfile
 before_install:
   - gem update --system
   - gem install bundler
